@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ch_server:
+    image: clickhouse/clickhouse-server
+    container_name: click
+    environment:
+      TZ: Asia/Yekaterinburg
+    ports:
+      - "8123:8123"
+      - "9100:9100"
+    volumes:
+      - ./db:/var/lib/clickhouse
